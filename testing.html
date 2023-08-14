@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="localTransfer2.css">
+
+</head>
+<body>
+    <header>
+        <h1>CSbank makeTransfer</h1>
+    </header>
+
+    <div class="flex-container" id="write">
+        <img class="logo" src="images/Logo.jpg" alt="CSbank Logo">
+        <p class="account-info"><b>CS Savings Account</b></p><br>
+        <p class="account-num">123-45678-9</p><br>
+        <p class="bank-type"><!-- Display bankType here --></p>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2023 CSbank. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<script>
+    window.onload = function() {
+        const params = new URLSearchParams(window.location.search);
+        const accountNum = params.get('accountNum');
+        const bankType = params.get('bankType');
+
+        if (accountNum) {
+            const accountNumElement = document.querySelector('.account-num');
+            accountNumElement.textContent = accountNum;
+        }
+
+        if (bankType) {
+            const bankTypeElement = document.querySelector('.bank-type');
+            bankTypeElement.textContent = bankType;
+        }
+    };
+</script>
